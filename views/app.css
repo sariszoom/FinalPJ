@@ -1,34 +1,41 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: #6fbbf5;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .input-field {
     position: relative;
-    margin-top: 2rem;
+    flex-direction: row;
+    margin-top: 1rem;
+    font-size: 20px;
 }
 .input-field input {
-    padding: 0.8rem;
+    padding: 0.5rem;
+    font-size: 20px;
 }
 
-form .input-field:first-child {
-    margin-bottom: 1.5rem;
-}
-.ALogin {
+.Login {
     position: relative;
-    margin-left: 2rem;
+    margin: 20px 75px 75px 90px;
 }
 
 form input[type="submit"] {
-    background: linear-gradient(to left, #6fbbf5, #8e54e9);
-    color: beige;
-    border-radius: 4px;
-    margin-top: 2rem;
+    background-color: limegreen;
+    color: white;
+    border-radius: 10px;
+    margin-top: 1rem;
     padding: 0.4rem;
+    font-size: 30px;
+}
+
+.swapPage {
+    margin-left: 175px;
 }
 
 /* form input[type="submit1" ] {

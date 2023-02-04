@@ -3,7 +3,15 @@ const express = require('express');
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 
+//MongoDB
+const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
+
+const dbConfig = require('./config/mongodb.config.js')
+const Login = require('./models/Login.js')
+
 //Initial express app
+const cors = require('cors')
 const app = express();
 const PORT = 3000;
 
@@ -42,8 +50,8 @@ app.get('/',(req,res) => {
     res.sendFile('views/Login.html',{root:__dirname})
 });
 
-app.get('/admin',(req,res) => {
-    res.sendFile('views/adminlogin.html',{root:__dirname})
+app.get('/loginAdmin',(req,res) => {
+    res.sendFile('views/loginAdmin.html',{root:__dirname})
 });
 
 app.get('/login',(req,res) => {
@@ -84,7 +92,7 @@ app.get('/logout',(req,res)=>{
 
 //page Error
 app.get('*',(req,res)=>{
-    req.send('ไม่พบหน้า(Error: 404 Page Not Found)')
-})
+    res.sendFile('views/404.html',{root:__dirname})
+});
 
 app.listen(PORT,() => console.log(`server Running at ${PORT}`));
